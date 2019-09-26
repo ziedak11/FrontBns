@@ -1,0 +1,119 @@
+<router-outlet></router-outlet>
+<div class="row" style="padding-top:20px;padding-left:20px;padding-right:20px">
+  <div class="col-lg-6">
+   <div class="card text-center">
+     <div class="card-header">
+      <h6 class="card-title">Adresse:	Pôle La Manouba des Technologies de la Communication 2010 la Manouba - Tunisie</h6>
+
+     </div>
+
+     <div class="card-body">
+
+       <h6 class="card-title"> Tél:</h6>+216.70.526.315
+      <h6 class="card-title"> Fax:</h6>+216.70.526.314<br>
+      <h6 class="card-title"> E-mail:</h6>contact@bns.tn
+       <br><br><br>
+      <h6 class="card-title">Nous sommes pêts à vous accompagner dans l'accomplissement de vos projets .</h6>
+<br>
+      <a href="#" class="btn btn-outline-info">Acceuil</a>
+     </div>
+     <div class="card-footer text-muted">
+        bns.tn
+     </div>
+ </div>
+</div>
+<!-- *************-->
+<div class="col-lg-6">
+
+          <div class="card text-center">
+          <div class="card-header">
+           <h6 class="card-title">TUCS SA Espace de PME , 1 étage ,Pôle technologique La Manouba</h6>
+          </div>
+
+          <div class="card-body">
+            <img #file type="file" accept='image/*'src="assets/images/contact.png"  height="250" width="700"class="img-fluid"style="padding-top:1px"/>
+           <a href="https://goo.gl/maps/NU7VGFLeexA4bAZP6">.BNS ENGINEERING..</a>
+
+          </div>
+          <div class="card-footer text-muted">
+             BNS ENGINEERING
+          </div>
+       </div>
+</div>
+
+
+
+<div class="col-lg-9" style="padding-left:400px;padding-top:50px;">
+  <div calss="card">
+    <div class="card-header bg-info text-white text-center">
+       CONTACTEZ NOUS
+        <img  #file type="file" accept='image/*'src="assets/images/message.PNG"  height="50" width="100"class="img-fluid"style="padding-top:1px;padding-right:20px;"/>
+    </div>
+    <div class="card-body" >
+      <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+           <div class="form-row">
+               <div class="form-group col-3">
+
+                   <label>Titre</label>
+                   <select formControlName="titre" class="form-control" style="border-radius: 40px;" [ngClass]="{ 'is-invalid': submitted && f.titre.errors }">
+                       <option value=""></option>
+                       <option value="Mr">Mr</option>
+                       <option value="Mrs">Mrs</option>
+                       <option value="Miss">Miss</option>
+                       <option value="Ms">Ms</option>
+                   </select>
+                   <div *ngIf="submitted && f.titre.errors" class="invalid-feedback">
+                       <div *ngIf="f.titre.errors.required">titre obligatoire!</div>
+                   </div>
+               </div>
+               <div class="form-group col-9">
+                   <label>Nom</label>
+
+                   <input type="text" formControlName="nom" class="form-control"style="border-radius: 40px;" [ngClass]="{ 'is-invalid': submitted && f.nom.errors }" />
+                   <div *ngIf="submitted && f.nom.errors" class="invalid-feedback">
+                       <div *ngIf="f.nom.errors.required">Nom obligatoire!</div>
+                   </div>
+               </div>
+
+
+
+           </div>
+           <div class="form-group">
+               <label>Email</label>
+               <input type="text" formControlName="email" class="form-control"style="border-radius: 40px;" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+               <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                   <div *ngIf="f.email.errors.required">Email is required</div>
+                   <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+               </div>
+           </div>
+           <div class="form-row">
+               <div class="form-group col">
+                   <label>message</label>
+                   <input type="text" formControlName="message" class="form-control" style="border-radius: 40px;"[ngClass]="{ 'is-invalid': submitted && f.message.errors }" />
+                   <div *ngIf="submitted && f.message.errors" class="invalid-feedback">
+                       <div *ngIf="f.message.errors.required">Password is required</div>
+                   </div>
+               </div>
+           </div>
+
+
+
+<!--
+    <div class="form-group form-check col-6">
+      <input type="checkbox" formControlName="acceptTerms" id="acceptTerms" class="form-check-input" [ngClass]="{ 'is-invalid': submitted && f.acceptTerms.errors }" />
+      <label for="acceptTerms" class="form-check-label">Accept Terms & Conditions</label>
+      <div *ngIf="submitted && f.acceptTerms.errors" class="invalid-feedback">Accept Ts & Cs is required</div>
+   </div>
+-->
+
+           <div class="text-center">
+               <button class="btn btn-primary mr-1" style="border-radius: 40px;"[disabled]="contactForm.perstine || contactForm.invalid"(click)="addMessage()">Envoyer</button>
+               <button class="btn btn-secondary" type="reset" style="border-radius: 40px;"(click)="onReset()">Annuler</button>
+           </div>
+       </form>
+   </div>
+    <div class="card-footer bg-info text-white">
+
+    </div>
+</div>
+</div>

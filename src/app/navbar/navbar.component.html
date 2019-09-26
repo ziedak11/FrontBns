@@ -1,0 +1,101 @@
+
+
+<nav class="navbar navbar-expand-lg navbar-light  bg-info: text-white" style="background-image: linear-gradient(to right,white,DarkCyan,white,LightSeaGreen,white); height:55px;">
+  <!-- Logo -->
+    <h1><a href="index.html" id="logo">
+      <img width="50px" height="50px"alt="Angular Logo" class="author-img" #file type="file" accept='image/*'src="assets/images/logo.png">
+    </a>
+    </h1>
+    <!--   <img src="/app/ressources/images/logo.png" width="7%" style="padding-left:10px;padding-top:10px"></a> <br>
+   <em style="padding-left:1px">Systèmes d'Information , Dématérialisation , Mobilité</em> -->
+
+  <!-- Nav
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button> -->
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent" style="margin-left:100px ;">
+    <ul class="navbar-nav mr-auto">
+      <!--<li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>-->
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/apropos" routerLinkActive="active">A PROPOS</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/activite" routerLinkActive="active">ACTIVITES</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link"  routerLink="/methodologie" routerLinkActive="active">METHODOLOGIE</a>
+      </li>
+
+      <li class="nav-item btn-rotate" ngbDropdown placement="bottom-left"><i class="nc-icon nc-bell-55"></i>
+          <a class="nav-link" ngbDropdownToggle id="navbarDropdownMenuLink" >NOS REFERENCES<span class="d-lg-none d-md-block">Some Actions</span>
+          </a>
+                <div ngbDropdownMenu aria-labelledby="navbarDropdownMenuLink" class="dropdown-menu dropdown-menu-right">
+                  <a ngbDropdownItem  routerLink="/references"routerLinkActive="active">REFERENCES</a>
+                  <a *ngIf=" login =='non'"ngbDropdownItem routerLink="/reference"routerLinkActive="active">REFERENCE</a>
+                </div>
+      </li>
+
+
+      <li class="nav-item btn-rotate" ngbDropdown placement="bottom-left"><i class="nc-icon nc-bell-55"></i>
+          <a class="nav-link" ngbDropdownToggle id="navbarDropdownMenuLink" >CONTACT<span class="d-lg-none d-md-block">Some Actions</span>
+          </a>
+                <div ngbDropdownMenu aria-labelledby="navbarDropdownMenuLink" class="dropdown-menu dropdown-menu-right">
+                  <a ngbDropdownItem  routerLink="/contact"routerLinkActive="active">Contactez-nous</a>
+                  <a  *ngIf=" login =='non'" ngbDropdownItem routerLink="/message" routerLinkActive="active">Messages</a>
+                </div>
+       </li>
+
+      <li class="nav-item btn-rotate" ngbDropdown placement="bottom-left"><i class="nc-icon nc-bell-55"></i>
+          <a class="nav-link" ngbDropdownToggle id="navbarDropdownMenuLink" >Mes Testes<span class="d-lg-none d-md-block">Some Actions</span>
+          </a>
+                <div ngbDropdownMenu aria-labelledby="navbarDropdownMenuLink" class="dropdown-menu dropdown-menu-right">
+                  <a ngbDropdownItem  routerLink="/modal"routerLinkActive="active">Load Images</a>
+                  <a ngbDropdownItem routerLink="/produit"routerLinkActive="active">Carousel</a>
+                  <a ngbDropdownItem routerLink="/tests"routerLinkActive="active">Tests</a>
+                  <a ngbDropdownItem routerLink="/login"routerLinkActive="active">Login</a>
+                </div>
+                <!--<label for="">time {{myDate}}</label>-->
+       </li>
+
+
+
+
+   </ul>
+ <form class="form-inline my-2 my-lg-0">
+
+     <button class="btn btn-outline-info my-2 my-sm-0" type="submit"style="border-radius: 40px;" (click)="connecter()">Connecter</button>
+  </form>
+<!--
+  <form class="form-inline my-2 my-lg-0">
+         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Connecter</button>
+  </form>
+-->
+<!--
+<button type="button" name="button">
+    <span class="badge badge-pill badge-warning">Messges 13</span>
+</button>
+-->
+
+<!-- test recherche
+
+<div class="input-group no-border">
+        <input type="text" value="" class="form-control" placeholder="Search...">
+        <div class="input-group-append">
+          <div class="input-group-text">
+            <i class="nc-icon nc-zoom-split"></i>
+          </div>
+        </div>
+      </div>
+-->
+
+
+
+
+  </div>
+</nav>

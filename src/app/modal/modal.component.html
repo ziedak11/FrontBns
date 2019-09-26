@@ -1,0 +1,31 @@
+<p>modal works!</p>
+
+
+<h3>Angular 7 Image Preview before Upload:</h3>
+<span style="color:red;" *ngIf="message">{{message}}</span>
+<input #file type="file" accept='image/*' (change)="preview(file.files)" />
+<img [src]="imgURL" height="200" width="200"*ngIf="imgURL">
+
+
+<!--
+<div class="row" style="padding-left:20px;">
+<ng-template #template>
+ <div class="modal header">
+     <h4>Modal</h4>
+     <button type="button" aria-label="close"(click)="modalRef.hide()">khbh</button>
+ </div>
+ <div class="modal-body">
+    <label> kjbkjfdbkjdfb</label>
+ </div>
+
+    <div class="modal-footer">
+      <button type="button" (click)="modalRef.hide()"> close</button>
+    </div>
+
+</ng-template>
+
+<button type="button" class="btn btn-success" (clik)="openModal(template)">
+Modal
+</button>
+</div>
+-->

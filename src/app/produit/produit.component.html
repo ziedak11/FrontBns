@@ -1,0 +1,14 @@
+<router-outlet></router-outlet>
+<p>produit works!</p>
+
+<ngb-carousel *ngIf="images" [showNavigationArrows]="showNavigationArrows" [showNavigationIndicators]="showNavigationIndicators">
+  <ng-template ngbSlide *ngFor="let image of images">
+    <div class="picsum-img-wrapper">
+      <img [src]="image" alt="Random slide" width="1500px" height="500px" >
+    </div>
+    <div class="carousel-caption">
+      <h3 style="color:#191970">No mouse navigation</h3>
+      <p class="font-italic"style="color:#191970" >Nous sommes pêts à vous accompagner dans l'accomplissement de vos projets .</p>
+    </div>
+  </ng-template>
+</ngb-carousel>

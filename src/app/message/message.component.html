@@ -1,0 +1,91 @@
+<p>message works!</p>
+
+<div class="row">
+<div class="col-lg-8" style="padding-left:35px">
+  <table class="table" style="margin-left:5px; margin-right:15px">
+      <thead class="thead-light">
+    <tr>
+      <th scope="col">Nom</th>
+      <th scope="col">Email</th>
+      <th scope="col">Envoyé le:</th>
+      <th scope="col"></th>
+      <th scope="col">Opération</th>
+
+    </tr>
+      </thead>
+      <tbody>
+    <tr *ngFor="let message of messages ">
+
+      <td>{{message.nom}}</td>
+      <td>{{message.email}}</td>
+      <td>{{message.date}}</td>
+      <td><button class="btn btn-outline-success" style="border-radius: 40px;"(click)="operation='detail'; selectedMessage=message;">Détail</button></td>
+      <td><button class="btn btn-outline-danger" style="border-radius: 40px;" (click)="operation='remove';  selectedMessage=message;">Supprimer</button></td>
+    </tr>
+      </tbody>
+  </table>
+</div>
+
+<div class="col-lg-4" style="padding-left:1px;padding-right:35px;">
+  <div calss="card">
+    <div class="card-header bg-info text-white"style="padding-left:90px;">
+      {{operation=='detail'?' Détail Message':
+        operation=='remove'?' Supprimer Message':''
+       }}
+       <img *ngIf=" operation =='detail'" #file type="file" accept='image/*'src="assets/images/detail.png"  height="50" width="100"class="img-fluid"style="padding-top:1px;padding-right:20px;"/>
+       <img *ngIf=" operation =='remove'" #file type="file" accept='image/*'src="assets/images/supprimer1.jpg"  height="50" width="100"class="img-fluid"style="padding-top:1px;padding-right:20px;"/>
+    </div>
+    <div class="card-body" >
+        <div *ngIf="operation =='detail'">
+      <form [formGroup]="messageForm">
+
+             <div class="form-group col-7">
+                 <label>Nom:</label>
+                 <input type="text" formControlName="nom" class="form-control" style="border-radius: 40px;" [(ngModel)]="selectedMessage.nom"/>
+             </div>
+
+             <div class="form-group col-9">
+                 <label>Email:</label>
+                 <input type="text" formControlName="email" class="form-control"style="border-radius: 40px;" [(ngModel)]="selectedMessage.email"/>
+             </div>
+
+             <div class="form-group col">
+                 <label>Envoyé le:</label>
+                 <input type="text" formControlName="date" class="form-control" style="border-radius: 40px;" [(ngModel)]="selectedMessage.date"/>
+             </div>
+
+             <div class="form-group col">
+                 <label>Message:</label>
+                 <input type="text" formControlName="message" class="form-control" style="border-radius: 40px;"[(ngModel)]="selectedMessage.message"/>
+             </div>
+
+           </form>
+          </div>
+             <div *ngIf="operation=='remove'">
+               <p calss="card-title">
+                 Nom:{{selectedMessage.nom}}
+               </p>
+
+               <p >
+                 Message:{{selectedMessage.message}}
+               </p>
+               <p>
+                 voulez-vous supprimer ce message ?
+               </p>
+
+                    <div class="row" class="text-center" >
+                       <button  class="btn btn-danger mr-1"style="border-radius: 40px;" data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?" (click)="removeMessage()">Confirmer</button>
+                       <button class="btn btn-secondary" type="reset" (click)="onReset()" style="padding-lef:3px;border-radius: 40px;">Annuler</button>
+                    </div>
+               </div>
+            </div>
+
+                <div class="card-footer bg-info text-white">
+                </div>
+             </div>
+
+
+
+
+
+</div>
